@@ -8,14 +8,20 @@ import { moveForward, rotateDirection } from './src/robot/controlRobot'
 
 // Make sure we got a filename on the command line.
 if (process.argv.length < INPUT.length) {
-  console.log('Usage: node ' + process.argv[1] + ' INPUT-FILE')
-  process.exit(1)
+  console.log(colors.red('ERR: Usage: node ' + process.argv[1] + ' INPUT-FILE\n'))
+  process.exit(0)
 }
 
 // quick handling of incorrectly formatted input file.
 function handleIncorrectFormatting () {
-  console.log('The input-file is incorrectly formatted.')
-  process.exit(1)
+  console.log(colors.red('ERR: The input-file is incorrectly formatted.\n'))
+  process.exit(0)
+}
+
+// quick handling of incorrectly formatted input file.
+function handleBadStartingCoordinates () {
+  console.log(colors.red('ERR: One of the Robots has an incorrect starting coordinate. The robot must start on Mars!\n'))
+  process.exit(0)
 }
 
 let input
@@ -86,6 +92,7 @@ function processRobots () {
 // launch the robot to mars and report back it's final state
 export function launchRobot (robotState, robotInstructions) {
   robotInstructions.forEach((instruction) => {
+    if (!robotState) return handleBadStartingCoordinates() // the robot has started in an incorrect position
     if (robotState.lost) return robotState
     switch (instruction) {
       case CONTROL.FORWARD:
