@@ -13,7 +13,6 @@ let scents = []
  * @returns {Array} scents - the currently stored scents
  */
 function createScent (oldState) {
-  delete oldState.lost
   scents = [...scents, oldState]
 
   return scents
