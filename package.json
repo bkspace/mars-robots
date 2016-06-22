@@ -4,9 +4,12 @@
   "description": "A coding challenge for Red Badger.",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node launch.js input.example.txt",
+    "start": "npm run start:dev",
+    "start:dev": "babel-node src/launch.js ../input.example.txt",
+    "start:prod": "npm run compile && node dist/launch.js ../input.example.txt",
     "lint": "standard",
-    "test": "mocha --compilers js:babel-core/register --recursive"
+    "test": "mocha --compilers js:babel-core/register --recursive",
+    "compile": "babel src --presets babel-preset-es2015 --out-dir dist"
   },
   "author": "Sammy Isseyegh [sammyisseyegh@gmail.com]",
   "license": "ISC",

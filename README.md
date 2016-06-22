@@ -1,11 +1,10 @@
+#Mars Robot
+## Description
 ## Linting
 `npm run lint`
 
+## Run
+`npm run start`
 
-Robot object --> {
-  positionX: 1
-  positionY: 2
-  direction: 'E'
-}
-
-Scents = [] // this is our only real state
+## Tests
+`npm run test`

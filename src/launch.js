@@ -1,10 +1,10 @@
 import path from 'path'
 import fs from 'fs'
 import colors from 'colors'
-import { INPUT, LOST, CONTROL } from './src/constants'
-import { setMaxPos } from './src/utils/maxPosition'
-import createRobotState from './src/robot/createRobotState'
-import { moveForward, rotateDirection } from './src/robot/controlRobot'
+import { INPUT, LOST, CONTROL } from './constants'
+import { setMaxPos } from './utils/maxPosition'
+import createRobotState from './robot/createRobotState'
+import { moveForward, rotateDirection } from './robot/controlRobot'
 
 // Make sure we got a filename on the command line.
 if (process.argv.length < INPUT.length) {
