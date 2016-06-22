@@ -4,6 +4,7 @@
   "description": "A coding challenge for Red Badger.",
   "main": "index.js",
   "scripts": {
+    "start": "babel-node launch.js input.example.txt",
     "lint": "standard",
     "test": "mocha --compilers js:babel-core/register --recursive"
   },
