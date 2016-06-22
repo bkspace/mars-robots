@@ -36,9 +36,9 @@ export function moveForward (oldRobot) {
  *
  * @param {Object} oldRobot - the state, before the movement
  * @returns {Object} newState - the new state of the robot
- * @returns {Number} xCord - the new x-coordinate
- * @returns {Number} yCord - the new y-coordinate
- * @returns {String} direction - the new direction
+ * @returns {Number} newState.xCord - the new x-coordinate
+ * @returns {Number} newState.yCord - the new y-coordinate
+ * @returns {String} newState.direction - the new direction
  */
 export function rotateDirection (oldRobot, isClockwise) {
   const { direction, xCord, yCord } = oldRobot
